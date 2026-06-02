@@ -326,18 +326,14 @@ function initLanguageRedirect() {
 
     langSelect.addEventListener("change", (e) => {
         const val = e.target.value;
-        const currentPath = window.location.pathname;
-        const isSubdir = currentPath.includes("/ar/") || currentPath.includes("/pt/");
-
         let destination = "";
 
         if (val === "ar") {
-            destination = isSubdir ? "../ar/index.html" : "ar/index.html";
+            destination = "../ar/index.html";
         } else if (val === "pt") {
-            destination = isSubdir ? "../pt/index.html" : "pt/index.html";
+            destination = "../pt/index.html";
         } else {
-            // English / default global
-            destination = isSubdir ? "../index.html" : "index.html";
+            destination = "../en/index.html";
         }
 
         window.location.href = destination;
