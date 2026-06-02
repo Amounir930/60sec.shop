@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://60sec.shop/</loc>
         <lastmod>2026-06-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://60sec.shop/en/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://60sec.shop/ar/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://60sec.shop/pt/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://60sec.shop/en/"/>
+    </url>
+    <url>
+        <loc>https://60sec.shop/ar/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://60sec.shop/en/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://60sec.shop/pt/"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://60sec.shop/ar/"/>
+    </url>
+    <url>
+        <loc>https://60sec.shop/pt/</loc>
+        <lastmod>2026-06-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://60sec.shop/en/"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://60sec.shop/ar/"/>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://60sec.shop/pt/"/>
     </url>
 </urlset>
