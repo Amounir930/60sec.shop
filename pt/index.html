@@ -2,6 +2,8 @@
 <html lang="pt" data-theme="dark" dir="ltr">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://60sec.shop https://wa.me; connect-src 'self' https://api.web3forms.com;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Domínio premium 60sec.shop à venda. O endereço ideal para aplicativos de entrega rápida, e-commerce, Q-Commerce e varejo digital. Faça sua oferta agora!">
@@ -29,8 +31,16 @@
 
     <title>60sec.shop | Domínio Premium à Venda | Marca Q-Commerce e Varejo</title>
 
-    <!-- Shared Stylesheet (Relative Path) -->
-    <link rel="stylesheet" href="../css/style.css">
+    <!-- Google Fonts (Parallel Load) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+
+    <!-- Parallel Stylesheets -->
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/forms.css">
 
     <!-- Schema.org Product Structured Data (SEO) -->
     <script type="application/ld+json">
@@ -119,7 +129,7 @@
                 </div>
                 <div class="hero-image-area">
                     <div class="mockup-card">
-                        <img src="../assets/logo-mockup.png" alt="60sec.shop Premium Identity Concept" class="mockup-img" loading="eager">
+                        <img src="../assets/logo-mockup.webp" alt="60sec.shop Premium Identity Concept" class="mockup-img" loading="eager" width="304" height="304">
                         <div class="mockup-meta">
                             <span class="meta-tag">Marca Premium</span>
                             <span class="meta-tag">Preço Compra Imediata: $1.000</span>
@@ -456,7 +466,7 @@
     <!-- Floating WhatsApp Button using local asset -->
     <div class="whatsapp-floating-wrapper">
         <a href="https://wa.me/201096888859?text=Ol%C3%A1%20Adel,%20tenho%20interesse%20em%20comprar%20o%20dominio%2060sec.shop" target="_blank" rel="noopener noreferrer" class="whatsapp-floating" id="whatsapp-floating-btn" aria-label="Fale conosco via WhatsApp">
-            <img src="../assets/WhatsApp_icon.png" alt="WhatsApp">
+            <img src="../assets/WhatsApp_icon.webp" alt="WhatsApp" width="60" height="60">
             <span class="whatsapp-pulse"></span>
         </a>
     </div>
