@@ -1,0 +1,179 @@
+/* -------------------------------------------------------------
+   60sec.shop - Layout Stylesheet (layout.css)
+   Contains navigation header, theme toggles, language dropdowns, marquees, and footer.
+   ------------------------------------------------------------- */
+
+/* Dynamic Header & Sticky Navigation */
+.header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 26px; /* Offset below the marquee banner */
+    z-index: 100;
+    padding: 0.75rem 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo-accent {
+    color: var(--accent-gold);
+}
+
+/* Navigation Menu & Theme Switcher */
+.nav-menu {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--accent-gold);
+}
+
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex;
+    }
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: var(--btn-secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--btn-secondary-hover);
+    border-color: var(--accent-gold);
+}
+
+/* Language Selector styling */
+.lang-selector {
+    background: var(--btn-secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.lang-selector:hover {
+    border-color: var(--accent-gold);
+}
+
+/* Urgency Marquee Banner */
+.marquee-banner {
+    background-color: var(--marquee-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--marquee-text);
+    font-size: 0.85rem;
+    font-weight: 700;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 26px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee-scroll 25s linear infinite;
+}
+
+.marquee-item {
+    padding: 0 4rem;
+}
+
+@keyframes marquee-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Adjust main content starting position to clear top marquee & sticky header */
+main {
+    margin-top: 0;
+    padding-top: 70px;
+}
+
+/* Footer Section (Scrolling Marquee) */
+.footer-marquee {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    overflow: hidden;
+    padding: 1.25rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.footer-marquee a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.footer-marquee a:hover {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+.footer-marquee .marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee-scroll 30s linear infinite;
+}
+
+.footer-marquee .marquee-item {
+    padding: 0 4rem;
+}

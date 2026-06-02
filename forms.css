@@ -1,0 +1,190 @@
+/* -------------------------------------------------------------
+   60sec.shop - Forms & Buttons Stylesheet (forms.css)
+   Contains button styles, input boxes, pricing layout, and validation alert blocks.
+   ------------------------------------------------------------- */
+
+/* Buttons Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--accent-gold);
+    border: 1px solid var(--accent-gold);
+    color: var(--btn-primary-text, #000); /* Uses dynamic variable for high contrast in day/night modes */
+}
+
+.btn-primary:hover {
+    background: #e5bd47;
+    border-color: #e5bd47;
+    color: #0B0E14; /* Always force high-contrast black text on bright hover gold */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--btn-secondary-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background: var(--btn-secondary-hover);
+    border-color: var(--accent-gold);
+    transform: translateY(-2px);
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+/* Pricing Card and Forms */
+.pricing-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing-header h3 {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+}
+
+.pricing-features {
+    list-style: none;
+}
+
+.pricing-features li {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.pricing-features li::before {
+    content: "•";
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+/* Offer form Card */
+.form-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.form-control {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.85rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: var(--accent-gold);
+}
+
+.input-currency-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+body[dir="ltr"] .input-currency-wrapper .form-control { padding-left: 2rem; }
+body[dir="rtl"] .input-currency-wrapper .form-control { padding-right: 2rem; }
+
+.currency-symbol {
+    position: absolute;
+    color: var(--accent-gold);
+    font-weight: 700;
+    pointer-events: none;
+}
+
+body[dir="ltr"] .currency-symbol { left: 1rem; }
+body[dir="rtl"] .currency-symbol { right: 1rem; }
+
+.error-msg {
+    display: none;
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    font-weight: 700;
+}
+
+.form-group.invalid .form-control {
+    border-color: #ef4444;
+}
+
+.form-group.invalid .error-msg {
+    display: block;
+}
+
+.form-alert {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.form-alert.success {
+    display: flex;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+}
+
+.form-alert.error {
+    display: flex;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}

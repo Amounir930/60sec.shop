@@ -1,0 +1,9 @@
+/* -------------------------------------------------------------
+   60sec.shop - Premium Boutique Domain Sales Stylesheet (style.css)
+   This is the master stylesheet, importing modular CSS components.
+   ------------------------------------------------------------- */
+
+@import 'theme.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'forms.css';

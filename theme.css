@@ -1,0 +1,167 @@
+/* -------------------------------------------------------------
+   60sec.shop - Theme & Base Config (theme.css)
+   Contains fonts, root CSS variables, global resets, and basic utility classes.
+   ------------------------------------------------------------- */
+
+/* Google Fonts Imports */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap');
+
+/* Color Variables Configuration */
+:root[data-theme="dark"] {
+    --bg-primary: #0B0E14;       /* Deep Charcoal black */
+    --bg-secondary: #131A26;     /* Deep Royal Blue for cards */
+    --accent-gold: #D4AF37;      /* Burnished Premium Gold */
+    --accent-gold-rgb: 212, 175, 55;
+    --text-main: #F5F7FA;        /* Ice white */
+    --text-muted: #8E9AAF;       /* Warm muted slate grey */
+    --border-color: #1F2B3E;     /* Royal blue border */
+    --header-bg: rgba(11, 14, 20, 0.9);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --marquee-bg: #1A1F2D;
+    --marquee-text: #D4AF37;
+    --btn-secondary-bg: #1F2B3E;
+    --btn-secondary-hover: #263750;
+    --input-bg: rgba(0, 0, 0, 0.4);
+    --btn-primary-text: #000000; /* High contrast black on bright gold */
+}
+
+:root[data-theme="light"] {
+    --bg-primary: #F8FAFC;       /* Clean cool slate white */
+    --bg-secondary: #FFFFFF;     /* Pure white for cards */
+    --accent-gold: #926D15;      /* Deeper bronze gold for perfect contrast */
+    --accent-gold-rgb: 146, 109, 21;
+    --text-main: #0F172A;        /* Dark slate black */
+    --text-muted: #475569;       /* Slate grey */
+    --border-color: #E2E8F0;     /* Light grey borders */
+    --header-bg: rgba(248, 250, 252, 0.9);
+    --shadow-color: rgba(15, 23, 42, 0.08);
+    --marquee-bg: #0B0E14;       /* Keep marquees dark for premium contrast! */
+    --marquee-text: #D4AF37;
+    --btn-secondary-bg: #E2E8F0;
+    --btn-secondary-hover: #CBD5E1;
+    --input-bg: #FFFFFF;
+    --btn-primary-text: #FFFFFF; /* High contrast white on dark bronze-gold */
+}
+
+/* Global Reset & Typography Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Arabic Layout Specifics */
+body[dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-white { color: #fff; }
+.mt-4 { margin-top: 2rem; }
+.mb-4 { margin-bottom: 2rem; }
+.hidden-honeypot { display: none; visibility: hidden; }
+
+/* Highlights styling */
+.highlight, .price-highlight {
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+/* Base Section and Headings Layout */
+section {
+    padding: 4rem 0;
+}
+
+.section-header {
+    margin-bottom: 2.5rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Premium Offer Section Sub-components */
+.badge-accent {
+    display: inline-block;
+    background: rgba(var(--accent-gold-rgb), 0.1);
+    border: 1px solid var(--border-color);
+    color: var(--accent-gold);
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pitch-lead {
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 2rem;
+}
+
+.trust-icons-area {
+    margin-top: 3rem;
+}
+
+.trust-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.trust-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.trust-logo {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+

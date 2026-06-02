@@ -1,0 +1,552 @@
+/* -------------------------------------------------------------
+   60sec.shop - Components Stylesheet (components.css)
+   Contains hero sections, bento grids, zig-zag highlights, timeline trackers, FAQs, and WhatsApp buttons.
+   ------------------------------------------------------------- */
+
+/* Human-Centered Asymmetrical Layout Elements */
+.hero-section {
+    padding: 4rem 0;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+}
+
+.hero-content {
+    text-align: center;
+}
+
+body[dir="ltr"] .hero-content { text-align: left; }
+body[dir="rtl"] .hero-content { text-align: right; }
+
+.hero-tagline {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+}
+
+.hero-description {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 580px;
+}
+
+@media (max-width: 1023px) {
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .cta-group {
+        flex-direction: row;
+    }
+}
+
+body[dir="ltr"] .cta-group {
+    @media (min-width: 1024px) { justify-content: flex-start; }
+}
+body[dir="rtl"] .cta-group {
+    @media (min-width: 1024px) { justify-content: flex-start; }
+}
+
+/* Logo Mockup Container */
+.hero-image-area {
+    display: flex;
+    justify-content: center;
+}
+
+.mockup-card {
+    width: 100%;
+    max-width: 380px;
+    padding: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 15px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mockup-card:hover {
+    transform: translateY(-5px);
+}
+
+.mockup-img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.mockup-meta {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.meta-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.meta-tag:last-child {
+    color: var(--accent-gold);
+}
+
+/* Asymmetric Bento Grid for Highlights */
+.bento-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.bento-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: all 0.2s ease;
+}
+
+.bento-item:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+}
+
+.bento-title {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-main);
+}
+
+.bento-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.bento-badge {
+    display: inline-block;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-top: 1.5rem;
+}
+
+/* Bento Sizing Breakpoints */
+@media (min-width: 768px) {
+    .bento-item-large { grid-column: span 4; }
+    .bento-item-medium { grid-column: span 3; }
+    .bento-item-small { grid-column: span 2; }
+    .bento-item-full { grid-column: span 6; }
+}
+
+/* Human Zig-Zag Layout for Use Cases */
+.zigzag-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.zigzag-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.zigzag-visual {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-gold); /* Premium gold top border */
+    border-radius: 8px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 12px 30px var(--shadow-color);
+    width: 100%;
+    order: 1; /* Default order for visual */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.zigzag-visual:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-gold);
+}
+
+.zigzag-text {
+    width: 100%;
+    order: 2; /* Default order for text */
+}
+
+.zigzag-num {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--accent-gold); /* Luxury outline style */
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.zigzag-visual h3 {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.zigzag-text h3 {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.zigzag-text p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 540px;
+    line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+    .zigzag-row {
+        flex-direction: row;
+        gap: 4rem;
+    }
+    
+    .zigzag-visual, .zigzag-text {
+        flex: 1;
+    }
+    
+    /* Alternate visual and text columns for even rows in both LTR and RTL */
+    .zigzag-row:nth-child(even) .zigzag-visual {
+        order: 2;
+    }
+    .zigzag-row:nth-child(even) .zigzag-text {
+        order: 1;
+    }
+}
+
+/* Security Trust Shields (Torus) Section */
+.shields-section {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.shields-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .shields-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.shield-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.shield-card:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-gold);
+}
+
+.shield-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    color: var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-card h3 {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.shield-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Timeline Layout */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+body[dir="ltr"] .timeline::before { left: 24px; }
+body[dir="rtl"] .timeline::before { right: 24px; }
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--accent-gold);
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 10;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: all 0.2s ease;
+}
+
+.timeline-panel {
+    flex: 1;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: border-color 0.2s ease;
+}
+
+.timeline-item:hover .timeline-badge {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold);
+    color: var(--bg-primary);
+}
+
+.timeline-item:hover .timeline-panel {
+    border-color: var(--accent-gold);
+}
+
+.timeline-panel h3 {
+    font-family: 'Playfair Display', 'Cairo', serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.timeline-panel p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* FAQ Accordion Styling */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.faq-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+    transition: all 0.2s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent-gold);
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.faq-toggle {
+    font-size: 1.25rem;
+    color: var(--accent-gold);
+    transition: transform 0.2s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+}
+
+.faq-answer p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.faq-item.active {
+    border-color: var(--accent-gold);
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    margin-top: 1rem;
+}
+
+/* Floating WhatsApp Button using local image asset */
+.whatsapp-floating-wrapper {
+    position: fixed;
+    bottom: 2rem;
+    z-index: 1000;
+    transition: none; /* Removed transition to allow lag-free dragging */
+}
+
+body[dir="ltr"] .whatsapp-floating-wrapper { right: 2rem; }
+body[dir="rtl"] .whatsapp-floating-wrapper { left: 2rem; }
+
+.whatsapp-floating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: transparent; /* Made background transparent */
+    border-radius: 50%;
+    position: relative;
+    cursor: grab; /* Shows grab hand icon */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.whatsapp-floating:active {
+    cursor: grabbing; /* Shows grabbing hand on drag active */
+}
+
+.whatsapp-floating img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+    pointer-events: none; /* Prevents default image dragging issues */
+}
+
+.whatsapp-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #25d366; /* Ring-style green pulse */
+    background-color: transparent;
+    border-radius: 50%;
+    z-index: -1;
+    animation: wa-pulse 2s infinite;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+@keyframes wa-pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Dynamic Grid layouts for forms vs pitch split */
+.grid-2-equal {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+    .grid-2-equal {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+}
